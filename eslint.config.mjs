@@ -9,6 +9,7 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+    "w02-tailwind-styling/.next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
