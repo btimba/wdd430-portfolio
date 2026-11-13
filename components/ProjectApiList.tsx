@@ -9,7 +9,7 @@ interface Project {
   description: string;
   type: 'opensource' | 'school';
   technologies: string[];
-  link?: string;
+  link?: string | null;
 }
 
 function isProject(value: unknown): value is Project {
@@ -27,7 +27,7 @@ function isProject(value: unknown): value is Project {
     'technologies' in value &&
     Array.isArray(value.technologies) &&
     value.technologies.every((technology) => typeof technology === 'string') &&
-    (!('link' in value) || typeof value.link === 'string')
+    (!('link' in value) || typeof value.link === 'string' || value.link === null)
   );
 }
 
